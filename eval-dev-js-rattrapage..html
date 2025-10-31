@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- <link rel="stylesheet" href="/src/style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Eval JS dev rattrapage</title>
+  </head>
+  <body class="min-h-screen">
+    <div class="drawer min-h-screen">
+      <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <div id="navbar-container"></div>
+
+
+        <!-- Main Content -->
+        <main id="vanta-bg" class="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <h1 id="main-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 text-center text-white/90">
+                    Évaluation Rattrapage JavaScript DEV
+                </h1>
+                <h2 class="text-xl sm:text-2xl font-light mb-8 text-center text-primary">
+                    Mini App de Dashboard
+                </h2>
+
+                <div class="container">
+
+                    <!-- Colonne 1 : Tâche du Jour & Horloge -->
+                    <div class="lg:col-span-1 space-y-6 mx-auto">
+
+                        <!-- NOUVEAU : Affichage de l'Heure en Temps Réel -->
+                        <div class="card bg-primary text-primary-content shadow-xl">
+                            <div class="card-body p-5 text-center">
+                                <h2 class="card-title justify-center text-2xl">⏳ Heure Actuelle</h2>
+                                <div id="heure-display" class="text-5xl font-mono mt-2">--:--:--</div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 1 : Gestion de la Tâche du Jour -->
+                        <div class="card bg-base-200 shadow-xl border border-base-content/20 mx-auto">
+                            <div class="card-body">
+                                <h2 class="card-title text-xl text-primary">🎯 Ma Tâche Principale du Jour</h2>
+                                
+                                <div id="tache-display" class="alert alert-info text-lg font-semibold my-4">
+                                    Chargement de la tâche...
+                                </div>
+                                
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <input type="text" id="tache-input" placeholder="Entrez la nouvelle tâche..." 
+                                           class="input input-bordered w-full" />
+                                    <button id="sauvegarder-btn" class="btn btn-primary min-w-max">
+                                        Sauvegarder
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Colonne 2 : Tâches de la Semaine (Liste To-Do) -->
+
+                </div>
+                
+                <!-- SECTION 3 : Affichage de la Météo (Pleine largeur) -->
+                <div class="card bg-base-200 shadow-xl border border-base-content/20 mt-6">
+                    <div class="card-body">
+                        <h2 class="card-title text-xl text-primary">☁️ Météo Actuelle à Toulouse</h2>
+                        
+                        <div id="meteo-display" class="flex flex-wrap gap-4 justify-between p-4 bg-base-100 rounded-lg">
+                            <!-- Les données météo seront injectées ici par Fetch -->
+                            Récupération des données météo...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes et Features -->
+                <div class="mt-8 p-4 bg-base-300 rounded-lg shadow-inner text-sm text-base-content/80">
+                    <p class="font-bold mb-2">Compétences Évaluées :</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Bases JS (variables, fonctions, boucles, conditions, tableaux, objets)</li>
+                        <li>WebStorage : **LocalStorage** (stocker et récupérer des chaînes et des collections)</li>
+                        <li>**Fetch API** (Requête asynchrone et gestion des données JSON)</li>
+                        <li>**DOM** (Manipulation et mise à jour des éléments)</li>
+                        <li>**Timing** (`setInterval` pour l'horloge)</li>
+                        <li>Intégration de la librairie **Vanta.js** (FOG) pour le background animé</li>
+                    </ul>
+                </div>
+                
+                <!-- Toast pour les notifications -->
+                <div id="toast-container" class="toast toast-top toast-end"></div>
+        </main>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
