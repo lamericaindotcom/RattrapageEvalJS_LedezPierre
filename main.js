@@ -9,12 +9,11 @@ function showTime() {
 }
 
 setInterval(showTime, 1000);
-showTime(); // Afficher immédiatement au chargement de la page
-
+showTime(); // Afficher l'heure au chargement de la page
 
 //Ma tache à faire
 
-// afficher la tache du jour
+// Afficher la tache du jour
 
 const tacheDisplay = document.getElementById('tache-display');
 const tacheInput = document.getElementById('tache-input');
@@ -43,13 +42,6 @@ sauvegarderBtn.addEventListener('click', () => {
     }
 
 });
-
-
-
-
-
-
-
 
 // Météo Toulouse
 
