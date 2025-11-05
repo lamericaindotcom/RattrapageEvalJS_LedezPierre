@@ -14,11 +14,37 @@ showTime(); // Afficher immédiatement au chargement de la page
 
 //Ma tache à faire
 
-localStorage.setItem('tache', 'Faire le café');
+// afficher la tache du jour
 
-const tacheElement = document.getElementById('tache-display');
-const tache = localStorage.getItem('tache');
-tacheElement.textContent = tache ? tache : 'Aucune tâche enregistrée';
+const tacheDisplay = document.getElementById('tache-display');
+const tacheInput = document.getElementById('tache-input');
+const sauvegarderBtn = document.getElementById('sauvegarder-btn');
+
+window.addEventListener('DOMContentLoaded', () => {
+    const tacheSauvegarder = localStorage.getItem('tacheDuJour');
+    if (tacheSauvegarder) {
+        tacheDisplay.textContent = tacheSauvegarder;
+    } else {
+        tacheDisplay.textContent = 'Aucune tâche pour aujourd\'hui.';
+    }      
+});
+
+// Sauvegarder la tache
+
+sauvegarderBtn.addEventListener('click', () => {
+    const nouvelleTache = tacheInput.value.trim();
+
+    if (nouvelleTache) {
+        localStorage.setItem('tacheDuJour', nouvelleTache);
+        tacheInput.value = '';
+    
+    } else {
+        alert('Veuillez entrer une tâche avant de sauvegarder.');
+    }
+
+});
+
+
 
 
 
